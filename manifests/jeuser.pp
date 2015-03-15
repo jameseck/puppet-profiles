@@ -1,3 +1,4 @@
+# Installs my user and my key
 class profiles::jeuser (
 ) {
 
