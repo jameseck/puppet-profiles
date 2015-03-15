@@ -1,4 +1,5 @@
-# Installs my user and my key
+# ==Class: profiles::jeuser
+#
 class profiles::jeuser (
 ) {
 
@@ -9,7 +10,7 @@ class profiles::jeuser (
     ensure => present,
     uid    => 1000,
     gid    => 1000,
-    passwd => 
+    passwd =>  $passwd,
   }
 
   group { 'james':
