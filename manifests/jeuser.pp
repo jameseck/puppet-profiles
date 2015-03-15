@@ -1,5 +1,6 @@
 # ==Class: profiles::jeuser
 #
+#
 class profiles::jeuser (
 ) {
 

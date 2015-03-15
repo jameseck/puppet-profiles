@@ -1,5 +1,6 @@
 # ==Class: profiles::base
 #
+#
 class profiles::base (
 ) {
 
