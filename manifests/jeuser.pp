@@ -21,14 +21,14 @@ class profiles::jeuser (
 
   ssh_authorized_key { 'james_key':
     ensure => present,
-    name   => 'James Eckersall 2008',
+    name   => 'James Eckersall 2008_james',
     user   => 'james',
     type   => 'ssh-rsa',
     key    => $ssh_key,
   }
   ssh_authorized_key { 'root_je_key':
     ensure => present,
-    name   => 'James Eckersall 2008',
+    name   => 'James Eckersall 2008_root',
     user   => 'root',
     type   => 'ssh-rsa',
     key    => $ssh_key,
