@@ -8,10 +8,10 @@ class profiles::jeuser (
   $ssh_key = hiera('je_ssh_key')
 
   user { 'james':
-    ensure => present,
-    uid    => 1000,
-    gid    => 1000,
-    passwd =>  $passwd,
+    ensure   => present,
+    uid      => 1000,
+    gid      => 1000,
+    password => $passwd,
   }
 
   group { 'james':
