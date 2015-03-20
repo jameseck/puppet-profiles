@@ -12,10 +12,11 @@ class profiles::jeuser (
     gid    => 1000,
   } ->
   user { 'james':
-    ensure   => present,
-    uid      => 1000,
-    gid      => 1000,
-    password => $passwd,
+    ensure     => present,
+    uid        => 1000,
+    gid        => 1000,
+    password   => $passwd,
+    managehome => true,
   } ->
   ssh_authorized_key { 'james_key':
     ensure => present,
