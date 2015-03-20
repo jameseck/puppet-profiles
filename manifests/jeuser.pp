@@ -7,18 +7,16 @@ class profiles::jeuser (
   $passwd = hiera('je_user_passwd')
   $ssh_key = hiera('je_ssh_key')
 
+  group { 'james':
+    ensure => present,
+    gid    => 1000,
+  } ->
   user { 'james':
     ensure   => present,
     uid      => 1000,
     gid      => 1000,
     password => $passwd,
-  }
-
-  group { 'james':
-    ensure => present,
-    gid    => 1000,
-  }
-
+  } ->
   ssh_authorized_key { 'james_key':
     ensure => present,
     name   => 'James Eckersall 2008_james',
