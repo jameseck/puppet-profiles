@@ -6,7 +6,7 @@ class profiles::base (
 
   include '::profiles::jeuser'
   include '::profiles::mandatory_packages'
-  include '::profiles::puppet'
+  include '::puppet'
   include '::ssh'
   include '::ntp'
   include '::sudo'
