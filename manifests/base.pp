@@ -10,5 +10,6 @@ class profiles::base (
   include '::profiles::mandatory_packages'
   include '::ssh'
   include '::ntp'
+  include '::sudo'
 
 }
