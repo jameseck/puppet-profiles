@@ -52,7 +52,7 @@ class profiles::mandatory_packages (
         'screen',
         'sysstat',
         'vim-nox',
-        'dmidecode',
+        #'dmidecode', # Not availble on rasbian
         'telnet',
         'wget',
         'curl',
