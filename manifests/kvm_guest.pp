@@ -5,4 +5,9 @@ class profiles::kvm_guest (
       ensure => installed,
     }
 
+    service { 'qemu-guest-agent':
+      ensure => running,
+      enable => true,
+    }
+
 }
