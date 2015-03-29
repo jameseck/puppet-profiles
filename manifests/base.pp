@@ -11,4 +11,8 @@ class profiles::base (
   include '::ntp'
   include '::sudo'
 
+  if ( $::virtual == 'kvm' ) {
+    include '::profiles::kvm_guest'
+  }
+
 }
