@@ -35,9 +35,11 @@ class profiles::puppet (
     'Debian': {
       Apt::Source {
         location    => 'http://apt.puppetlabs.com',
-        key         => '4BD6EC30',
-        key_content => template('puppet/pgp.key'),
       }
+      apt::key { 'puppetlabs':
+        key        => '4BD6EC30',
+        key_source => 'http://apt.puppetlabs.com/keyring.gpg',
+      } ->
       apt::source { 'puppetlabs':      repos => 'main' }
       apt::source { 'puppetlabs-deps': repos => 'dependencies' }
     }
