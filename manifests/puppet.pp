@@ -44,7 +44,6 @@ class profiles::puppet (
     default: { fail("Unsupported osfamily ${::osfamily}") }
 
   }
-  include '::puppet'
-  Class['profiles::puppet'] -> Class['puppet']
+  contain '::puppet'
 
 }
