@@ -1,9 +1,6 @@
 class profiles::puppet (
 ) {
 
-  include '::puppet'
-
-  Class['profiles::puppet'] -> Class['puppet']
 
   # Manage the puppetlabs repo's
 
@@ -47,5 +44,7 @@ class profiles::puppet (
     default: { fail("Unsupported osfamily ${::osfamily}") }
 
   }
+  include '::puppet'
+  Class['profiles::puppet'] -> Class['puppet']
 
 }
