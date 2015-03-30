@@ -37,11 +37,12 @@ class profiles::puppet (
         key        => '4BD6EC30',
         key_source => 'http://apt.puppetlabs.com/keyring.gpg',
       }
-      Apt::Source {
-        location    => 'http://apt.puppetlabs.com',
-      }
-      apt::source { 'puppetlabs':      repos => 'main' }
-      apt::source { 'puppetlabs-deps': repos => 'dependencies' }
+      #Apt::Source {
+      #  location    => 'http://apt.puppetlabs.com',
+      #}
+      $apt_location = 'http://apt.puppetlabs.com'
+      apt::source { 'puppetlabs':      repos => 'main', location => $apt_location }
+      apt::source { 'puppetlabs-deps': repos => 'dependencies', location => $apt_location }
     }
     default: { fail("Unsupported osfamily ${::osfamily}") }
 
