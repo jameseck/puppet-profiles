@@ -1,11 +1,11 @@
 class profiles::atrpms (
-  $atrpms_enable    = true,
+  $atrpms_enable    = '1',
   $atrpms_exclude   = '',
   $atrpms_include   = '',
-  $testing_enable   = false,
+  $testing_enable   = '0',
   $testing_exclude  = '',
   $testing_include  = '',
-  $bleeding_enable  = false,
+  $bleeding_enable  = '0',
   $bleeding_exclude = '',
   $bleeding_include = '',
 ) {
