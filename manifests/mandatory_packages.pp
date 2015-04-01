@@ -36,6 +36,7 @@ class profiles::mandatory_packages (
             'telnet',
             'wget',
             'curl',
+            'psmisc',
             'policycoreutils-python',
             'bash-completion',
             'ipmitool',
