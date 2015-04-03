@@ -10,6 +10,7 @@ class profiles::base (
   include '::ssh'
   include '::ntp'
   include '::sudo'
+  include '::timezone'
 
 #  if ( $::virtual == 'kvm' ) {
 #    include '::profiles::kvm_guest'
