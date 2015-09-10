@@ -1,4 +1,6 @@
 class profiles::keepalived_dns (
+  $state    = 'MASTER',
+  $priority = '101',
 ) {
 
   include '::keepalived'
@@ -18,9 +20,9 @@ class profiles::keepalived_dns (
   } ->
   keepalived::vrrp::instance { 'VI_DNS':
     interface         => 'eth0',
-    state             => 'MASTER',
+    state             => $state,
     virtual_router_id => '50',
-    priority          => '101',
+    priority          => $priority,
     auth_type         => 'PASS',
     auth_pass         => 'secret',
     virtual_ipaddress => [ '192.168.1.2/24' ],
