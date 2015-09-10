@@ -34,6 +34,7 @@ class profiles::keepalived_dns (
     interval => 2,
     rise     => 2,
     fall     => 2,
+    weight   => 2,
   }
 
 
