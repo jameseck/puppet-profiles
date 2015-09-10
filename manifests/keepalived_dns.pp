@@ -1,6 +1,7 @@
 class profiles::keepalived_dns (
   $state    = 'MASTER',
   $priority = '101',
+  $ipcheck  = '',
 ) {
 
   include '::keepalived'
@@ -16,7 +17,7 @@ class profiles::keepalived_dns (
     owner  => 'root',
     group  => 'root',
     mode   => '0755',
-    source => 'puppet:///modules/profiles/keepalived_dns/check-keepalived.sh',
+    source => template('profiles/keepalived_dns/check-keepalived.sh.erb'),
   } ->
   keepalived::vrrp::instance { 'VI_DNS':
     interface         => 'eth0',
