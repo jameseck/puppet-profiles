@@ -1,7 +1,7 @@
 class profiles::keepalived_dns (
   $state    = 'MASTER',
   $priority = '101',
-  $ipcheck  = '',
+  $ipcheck  = $::ipaddress,
 ) {
 
   include '::keepalived'
