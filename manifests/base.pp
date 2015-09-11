@@ -12,14 +12,14 @@ class profiles::base (
   include '::timezone'
   include '::ssh'
 
-  ::ssh::client::config::user { 'root':
-    ensure              => present,
-    user_home_dir       => '/root',
-    manage_user_ssh_dir => false,
-    options             => {
-      'ForwardAgent' => 'yes'
-    }
-  }
+#  ::ssh::client::config::user { 'root':
+#    ensure              => present,
+#    user_home_dir       => '/root',
+#    manage_user_ssh_dir => false,
+#    options             => {
+#      'ForwardAgent' => 'yes'
+#    }
+#  }
 
 #  if ( $::virtual == 'kvm' ) {
 #    include '::profiles::kvm_guest'
