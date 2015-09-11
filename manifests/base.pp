@@ -17,7 +17,7 @@ class profiles::base (
     user_home_dir       => '/root',
     manage_user_ssh_dir => false,
     options             => {
-      'AgentForwarding' => 'yes'
+      'ForwardAgent' => 'yes'
     }
   }
 
