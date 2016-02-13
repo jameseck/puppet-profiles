@@ -12,6 +12,10 @@ class profiles::base (
   include '::timezone'
   include '::ssh'
 
+  if ( $::osfamily == 'RedHat' ) {
+    include '::profiles::redhat_base'
+  }
+
 #  ::ssh::client::config::user { 'root':
 #    ensure              => present,
 #    user_home_dir       => '/root',
