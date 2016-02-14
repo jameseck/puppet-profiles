@@ -11,6 +11,7 @@ class profiles::base (
   include '::sudo'
   include '::timezone'
   include '::ssh'
+  include '::postfix'
 
   if ( $::osfamily == 'RedHat' ) {
     include '::profiles::redhat_base'
