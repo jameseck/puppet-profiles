@@ -1,6 +1,9 @@
 class profiles::stunnel (
 ) {
 
+  package { 'stunnel':
+    ensure => installed,
+  }
   file { '/etc/systemd/system/stunnel@.service':
     ensure => file,
     owner  => 'root',
